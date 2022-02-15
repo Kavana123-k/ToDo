@@ -1,0 +1,46 @@
+
+<div class="container">
+    <div>
+        <h1 class="d-flex justify-content-center">
+            To-Do List
+        </h1>
+    </div>
+  
+<div class="add-task">
+    <div class="row align-items-center" style="height:100px;"><br>
+        
+         <div class="col-md-4">
+            <textarea [(ngModel)]="task" type="text" 
+            value="" class="col-7 form-control"
+                style="width:400px;"></textarea>
+         </div>
+            
+            <div class="col-md-3 offset-md-3">
+            <button (click)="addTask()" 
+            class="btn btn-light text-success">
+            ADD TASK
+            </button>
+            </div>
+        
+    </div>
+</div>
+    <div *ngFor="let x of toDoList; let index = index;" 
+            class="row mt-1" style="height:100px;">
+  
+        <div class="col-3 d-none col-md-3 d-md-block"></div>
+  
+        <div class="col-12 col-md-6 bg-success d-flex
+                    justify-content-center align-items-center
+                    text-light h3">
+  
+            <div class="col-9 text-light h3">{{x}}</div>
+  
+            <input (click)="deleteTask(index)" type="button"
+                value="Delete" class="col-2 btn btn-danger">
+
+           <input type="checkbox" class="form-check-input" id="complete" (change)="onChange()"> 
+
+        </div>
+          
+    </div>
+</div>
