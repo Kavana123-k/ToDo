@@ -1,0 +1,25 @@
+<h5>Welcome to Todo App!</h5>
+
+<div>
+  <form novalidate (submit)="addTodo()">
+    <input type="text" [(ngModel)]="todoName" name="todoNAme" />
+    <button type="submit">Add</button>
+  </form>
+  <div>
+      <div *ngFor="let todo of todoList;let index=index" >
+          <input type="checkbox" [value]="todo.done">
+          <p >{{todo.name}}</p>
+          <button (click)="deleteTodo(index)">delete</button>
+
+          
+      </div>
+  </div>
+
+  <!-- <form>
+    <div *ngFor="let todo of todoList;">
+      <div *ngIf="todo.done==true">
+        <p>{{todo.name}}</p>
+       </div>
+    </div>
+  </form> -->
+</div>

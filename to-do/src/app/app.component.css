@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container >* {
+    width: 50%;
+    box-shadow: 0px 0px 5px gray;
+    padding: 10px;
+}
