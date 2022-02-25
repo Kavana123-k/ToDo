@@ -23,31 +23,45 @@
         </button>
       </div>
     </div>
+  </div>
+  <div
+    *ngFor="let x of toDoList; let index = index"
+    class="row mt-1"
+    style="height: 100px"
+  >
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+
+    <div
+      class="col-12 col-md-6 bg-success d-flex justify-content-center align-items-center text-light h3"
+    >
+      <div class="col-9 text-light h3">{{ x.name }}</div>
+
+      <input
+        (click)="deleteTask(index)"
+        type="button"
+        value="Delete"
+        class="col-2 btn btn-danger"
+      />
+
+      <!-- <input type="checkbox" class="form-check-input" [value]="x.done" (change)="onChange()">  -->
+      <input
+        type="checkbox"
+        class="form-check-input"
+        [(ngModel)]="x.done"
+        (change)="onChange()"
+      />
     </div>
-    <div *ngFor="let x of toDoList; let index = index;" 
-            class="row mt-1" style="height:100px;">
-  
-        <div class="col-3 d-none col-md-3 d-md-block"></div>
-  
-        <div class="col-12 col-md-6 bg-success d-flex
-                    justify-content-center align-items-center
-                    text-light h3">
-  
-            <div class="col-9 text-light h3">{{x.name}}</div>
-  
-            <input (click)="deleteTask(index)" type="button"
-                value="Delete" class="col-2 btn btn-danger">
+  </div><hr>
 
-           <input type="checkbox" class="form-check-input" [value]="x.done"> 
-
-        </div>       
-    </div>
-
-    <div>
-      <app-task-list [task_list]="toDoList"></app-task-list>  
+  <div>
+    <app-task-list [task_list]="toDoList"></app-task-list><hr>
   </div>
 
-</div> 
+  <div>
+    <h1>Task Completed</h1>
+    <div *ngFor="let item of remainTask">     
+        {{ item.name }}   
+    </div>
+  </div>
 
-
-
+</div>

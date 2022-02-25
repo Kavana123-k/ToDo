@@ -12,6 +12,10 @@ type Todo = { name: string; done: boolean };
 export class ToDoComponent implements OnInit {
    toDoList: Todo[] = [];
 
+   
+   remainTask:any;
+    
+
    task= '';
   //public index: any;
 
@@ -31,8 +35,12 @@ export class ToDoComponent implements OnInit {
     this.toDoList.splice(index, 1);
   }
 
-  onChange(todo:Todo) {
-    todo.done = !todo.done;
+  onChange() {
+   // todo.done = !todo.done;
+   this.remainTask = this.toDoList.filter((value) => {     
+    return value.done;     
+  });
+
    }
 
   

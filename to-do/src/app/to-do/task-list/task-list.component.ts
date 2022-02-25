@@ -11,12 +11,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TaskListComponent implements OnInit {
  
 
-  @Input() task_list:any;
-  
+  @Input() task_list:any  ;
+   
+   
 
   constructor() { }
 
   ngOnInit(): void {
+
   }
  
  

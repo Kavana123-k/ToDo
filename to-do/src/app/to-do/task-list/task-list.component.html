@@ -1,8 +1,8 @@
 <h1 class="d-flex justify-content-center">Task List</h1>
 
-
-<div *ngFor="let x of task_list" >
-        
-    <p>x.name</p>
-
+<div>
+    <div *ngFor="let item of task_list">
+      <div>{{item.name}}</div>     
+    </div>
 </div>
+
